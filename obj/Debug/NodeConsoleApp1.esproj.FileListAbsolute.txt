@@ -1,0 +1,2 @@
+C:\Users\Adam\source\repos\haribo841\Minimal-Dungeon-RPG-Demo\NodeConsoleApp1\obj\Debug\NodeConsoleApp1.esproj.CoreCompileInputs.cache
+C:\Users\Adam\source\repos\haribo841\NodeConsoleApp1\obj\Debug\NodeConsoleApp1.esproj.CoreCompileInputs.cache
