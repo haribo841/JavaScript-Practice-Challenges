@@ -1,11 +1,12 @@
-//Fix the code in the code tab to pass this challenge (only syntax errors).
-function cubes(a) {
-	return a ** 3;
+//The challenge is to try and fix this buggy code, given the inputs true and false.
+function has_bugs(buggy_code) {
+	if (buggy_code) {
+		return 'sad days';
+	} else {
+		return "it's a good day";
+	}
 }
 const Test = require('../testHelper.js');
-Test.assertEquals(cubes(2), 8)
-Test.assertEquals(cubes(3), 27)
-Test.assertEquals(cubes(4), 64)
-Test.assertEquals(cubes(5), 125)
-Test.assertEquals(cubes(10), 1000)
-console.log(cubes());
+Test.assertEquals(has_bugs(true), "sad days")
+Test.assertEquals(has_bugs(false), "it's a good day")
+console.log(has_bugs());
