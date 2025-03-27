@@ -1001,4 +1001,3 @@ Test.assertEquals(sumPolygon(997), 179100)
 Test.assertEquals(sumPolygon(998), 179280)
 Test.assertEquals(sumPolygon(999), 179460)
 Test.assertEquals(sumPolygon(1000), 179640)
-console.log(sumPolygon());

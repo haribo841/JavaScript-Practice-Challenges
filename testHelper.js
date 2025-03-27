@@ -1,6 +1,6 @@
 const Test = {
     assertEquals: function (actual, expected, message) {
-        if (actual === expected) {
+        if (JSON.stringify(actual) === JSON.stringify(expected)) {
             console.log("Test passed.");
         } else {
             console.error("Test failed:", message);

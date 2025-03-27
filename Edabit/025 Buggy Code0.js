@@ -9,4 +9,3 @@ function has_bugs(buggy_code) {
 const Test = require('../testHelper.js');
 Test.assertEquals(has_bugs(true), "sad days")
 Test.assertEquals(has_bugs(false), "it's a good day")
-console.log(has_bugs());

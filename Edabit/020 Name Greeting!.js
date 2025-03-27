@@ -6,4 +6,3 @@ Test.assertEquals(helloName("Gerald"), "Hello Gerald!")
 Test.assertEquals(helloName("Fatima"), "Hello Fatima!")
 Test.assertEquals(helloName("Ed"), "Hello Ed!")
 Test.assertEquals(helloName("Tiffany"), "Hello Tiffany!")
-console.log(helloName());

@@ -15,4 +15,3 @@ Test.assertEquals(and(true, true), true)
 Test.assertEquals(and(true, false), false)
 Test.assertEquals(and(false, true), false)
 Test.assertEquals(and(false, false), false)
-console.log(and());

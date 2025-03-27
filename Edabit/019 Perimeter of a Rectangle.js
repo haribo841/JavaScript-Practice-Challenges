@@ -6,4 +6,3 @@ const Test = require('../testHelper.js');
 Test.assertEquals(findPerimeter(6, 7), 26)
 Test.assertEquals(findPerimeter(20, 10), 60)
 Test.assertEquals(findPerimeter(2, 9), 22)
-console.log(findPerimeter());

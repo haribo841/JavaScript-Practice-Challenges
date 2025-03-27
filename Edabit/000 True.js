@@ -3,4 +3,3 @@ function hello() {
 }
 const Test = require('../testHelper.js');
 Test.assertEquals(hello(), "hello world", "Did you *return* the result?");
-console.log(hello());

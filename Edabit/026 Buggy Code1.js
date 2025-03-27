@@ -8,4 +8,3 @@ Test.assertEquals(cubes(3), 27)
 Test.assertEquals(cubes(4), 64)
 Test.assertEquals(cubes(5), 125)
 Test.assertEquals(cubes(10), 1000)
-console.log(cubes());

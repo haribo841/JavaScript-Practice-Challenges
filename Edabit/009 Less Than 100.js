@@ -23,4 +23,3 @@ Test.assertEquals(lessThan100(50, 44), true)
 Test.assertEquals(lessThan100(74, 89), false)
 Test.assertEquals(lessThan100(3, 27), true)
 Test.assertEquals(lessThan100(21, 79), false)
-console.log(lessThan100());

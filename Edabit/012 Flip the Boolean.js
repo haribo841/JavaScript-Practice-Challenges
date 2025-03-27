@@ -10,4 +10,3 @@ Test.assertEquals(reverse(0), "boolean expected")
 Test.assertEquals(reverse(null), "boolean expected")
 Test.assertEquals(reverse(undefined), "boolean expected")
 Test.assertEquals(reverse({}), "boolean expected")
-console.log(reverse());

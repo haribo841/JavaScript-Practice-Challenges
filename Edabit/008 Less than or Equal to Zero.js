@@ -6,4 +6,3 @@ const Test = require('../testHelper.js');
 Test.assertEquals(lessThanOrEqualToZero(5), false)
 Test.assertEquals(lessThanOrEqualToZero(0), true)
 Test.assertEquals(lessThanOrEqualToZero(-5), true)
-console.log(lessThanOrEqualToZero());

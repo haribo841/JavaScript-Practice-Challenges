@@ -9,4 +9,3 @@ Test.assertEquals(footballPoints(5, 5, 5), 20)
 Test.assertEquals(footballPoints(1, 0, 0), 3)
 Test.assertEquals(footballPoints(0, 7, 0), 7)
 Test.assertEquals(footballPoints(0, 0, 15), 0)
-console.log(footballPoints());

@@ -11,4 +11,3 @@ Test.assertEquals(nameString("Mubashir"), "MubashirEdabit")
 Test.assertEquals(nameString("Matt"), "MattEdabit")
 Test.assertEquals(nameString("javaScript"), "javaScriptEdabit")
 Test.assertEquals(nameString("Airforce"), "AirforceEdabit")
-console.log(nameString());

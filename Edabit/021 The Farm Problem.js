@@ -13,4 +13,3 @@ Test.assertEquals(animals(5, 2, 8), 50)
 Test.assertEquals(animals(3, 4, 7), 50)
 Test.assertEquals(animals(1, 2, 3), 22)
 Test.assertEquals(animals(3, 5, 2), 34)
-console.log(animals());

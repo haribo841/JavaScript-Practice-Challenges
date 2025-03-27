@@ -8,4 +8,3 @@ Test.assertEquals(triArea(5, 4), 10)
 Test.assertEquals(triArea(10, 10), 50)
 Test.assertEquals(triArea(0, 60), 0)
 Test.assertEquals(triArea(12, 11), 66)
-console.log(triArea());

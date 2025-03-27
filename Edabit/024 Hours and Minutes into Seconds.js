@@ -6,4 +6,3 @@ const Test = require('../testHelper.js');
 Test.assertEquals(convert(1, 0), 3600)
 Test.assertEquals(convert(1, 3), 3780)
 Test.assertEquals(convert(0, 30), 1800)
-console.log(convert());

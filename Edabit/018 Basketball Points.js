@@ -11,4 +11,3 @@ Test.assertEquals(points(1, 2), 8)
 Test.assertEquals(points(2, 1), 7)
 Test.assertEquals(points(2, 2), 10)
 Test.assertEquals(points(69, 420), 1398)
-console.log(points());
