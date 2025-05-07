@@ -17,5 +17,5 @@ const Test = {
     }
   }
 };
-
-module.exports = Test;
+export const assertEquals = Test.assertEquals;
+export const assertNotEquals = Test.assertNotEquals;
