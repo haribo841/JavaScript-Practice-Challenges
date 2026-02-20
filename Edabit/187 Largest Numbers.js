@@ -1,6 +1,9 @@
 ﻿//Create a function that takes two arguments of an array of numbers arr and a constant number n and returns the n largest numbers from the given array.
 function largestNumbers(n, arr) {
-    return arr.sort((a, b) => a - b).slice(-n)
+    n = Math.floor(n);                // optional: ensure integer
+    if (n <= 0) return [];
+    const sorted = arr.slice().sort((a, b) => a - b);
+    return n >= sorted.length ? sorted.slice() : sorted.slice(-n);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(largestNumbers(2, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]), [9, 10])
