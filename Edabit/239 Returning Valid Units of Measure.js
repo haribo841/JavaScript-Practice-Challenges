@@ -10,7 +10,7 @@ import { assertEquals } from '../testHelper.js';
 assertEquals(hasValidUnitOfMeasure({ "product": "Milk", unitOfMeasure: "L" }), true)
 assertEquals(hasValidUnitOfMeasure({ "product": "Cheese", unitOfMeasure: "PCE" }), true)
 assertEquals(hasValidUnitOfMeasure({ "product": "Eggs", comment: "Eggs are too different in size" }), true)
-//assertEquals(hasValidUnitOfMeasure({ "product": "Cerials", unitOfMeasure: "" }), false)
+assertEquals(hasValidUnitOfMeasure({ "product": "Cerials", unitOfMeasure: "" }), false)
 assertEquals(hasValidUnitOfMeasure({ "product": "Flour" }), false)
 assertEquals(hasValidUnitOfMeasure({ "product": "Beer", unitOfMeasure: false }), false)
 assertEquals(hasValidUnitOfMeasure({ "product": "Beef", unitOfMeasure: "Cow" }), false)
