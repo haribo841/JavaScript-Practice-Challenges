@@ -8,14 +8,15 @@ const Test = {
     }
   },
 
-  assertNotEquals: function (actual, notExpected, message) {
-    if (JSON.stringify(actual) !== JSON.stringify(notExpected)) {
-      console.log("Test passed.");
-    } else {
-      console.error("Test failed:", message);
-      console.error("Did not expect:", notExpected, "but got:", actual);
+ assertNotEquals: function (actual, notExpected, message) {
+     if (actual !== notExpected) {
+         console.log("Test passed.");
+     } else {
+         console.error("Test failed:", message);
+         console.error("Did not expect the same object reference.");
+     }
     }
   }
-};
+;
 export const assertEquals = Test.assertEquals;
 export const assertNotEquals = Test.assertNotEquals;
