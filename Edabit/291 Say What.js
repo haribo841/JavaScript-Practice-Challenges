@@ -4,7 +4,7 @@ function sayWhat(obj) {
     return `${obj[1]} ${obj[2]} ${obj[3]} ${obj[2]}`;
 }
 import { assertEquals } from '../testHelper.js';
-const random = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+const random = Math.floor(Math.random() * 1000) + 1;
 const obj = { 1: "Mommy", 2: "please", 3: "help" }
 const obj2 = { 1: random, 2: "innocent", 3: "is" }
 assertEquals(sayWhat(obj), "Mommy please help please")
