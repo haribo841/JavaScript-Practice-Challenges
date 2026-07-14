@@ -12,7 +12,7 @@ globalThis.two = undefined;
 eval(str)
 
 const validString = (str) => {
-    return /\{.*(one).*(two).*\}.*\=/.test(str) ? "valid" : "not valid"
+    return /\{.*(one).*(two).*\}.*=/.test(str) ? "valid" : "not valid"
 }
 
 assertEquals(validString(str), "valid", "You must use the object destructuring to assign variables one and two")
