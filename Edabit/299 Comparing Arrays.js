@@ -1,11 +1,8 @@
 ﻿//Create a function that returns true if two arrays sharing the same length have identical numerical values at every index, and false otherwise.
 // Fix this code
 function checkEquals(arr1, arr2) {
-    if (arr1.every((value, index) => value === arr2[index]) {
-        return true
-    } else {
-        return false
-    }
+    return arr1.length === arr2.length &&
+        arr1.every((value, index) => value === arr2[index]);
 }
 import { assertEquals } from '../testHelper.js';
 // test cases
@@ -24,6 +21,6 @@ let expected = [true, false, false, true, false, false, true, false, false, true
 let message = ["", "", "Are you sure this is true?", "", "Should return false", "", "", "", "", "", ""]
 
 // run tests
-for (i in actual) {
+for (let i in actual) {
 	assertEquals(actual[i], expected[i], message[i])
 }
