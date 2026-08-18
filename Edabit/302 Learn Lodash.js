@@ -9,10 +9,17 @@ value (can be anything): The first value to compare.
 other (can be anything): The other value to compare against.
 returns: (boolean): Returns true if they are the same, otherwise false.*/
 function isEqual_myVersion(a, b) {
+    // Te same wartości/referencje
     if (a === b) {
         return true;
     }
 
+    // NaN === NaN według _.isEqual()
+    if (Number.isNaN(a) && Number.isNaN(b)) {
+        return true;
+    }
+
+    // null lub różne typy
     if (
         a === null ||
         b === null ||
@@ -22,6 +29,83 @@ function isEqual_myVersion(a, b) {
         return false;
     }
 
+    // Date
+    if (a instanceof Date || b instanceof Date) {
+        return (
+            a instanceof Date &&
+            b instanceof Date &&
+            a.getTime() === b.getTime()
+        );
+    }
+
+    // RegExp
+    if (a instanceof RegExp || b instanceof RegExp) {
+        return (
+            a instanceof RegExp &&
+            b instanceof RegExp &&
+            a.source === b.source &&
+            a.flags === b.flags
+        );
+    }
+
+    // Typed arrays
+    if (ArrayBuffer.isView(a) || ArrayBuffer.isView(b)) {
+        if (
+            !ArrayBuffer.isView(a) ||
+            !ArrayBuffer.isView(b) ||
+            a.constructor !== b.constructor ||
+            a.length !== b.length
+        ) {
+            return false;
+        }
+
+        return Array.from(a).every(
+            (value, index) => value === b[index]
+        );
+    }
+
+    // Set
+    if (a instanceof Set || b instanceof Set) {
+        if (
+            !(a instanceof Set) ||
+            !(b instanceof Set) ||
+            a.size !== b.size
+        ) {
+            return false;
+        }
+
+        const valuesB = [...b];
+
+        return [...a].every(valueA => {
+            const index = valuesB.findIndex(valueB =>
+                isEqual_myVersion(valueA, valueB)
+            );
+
+            if (index === -1) {
+                return false;
+            }
+
+            valuesB.splice(index, 1);
+            return true;
+        });
+    }
+
+    // Arrays
+    if (Array.isArray(a) || Array.isArray(b)) {
+        if (
+            !Array.isArray(a) ||
+            !Array.isArray(b) ||
+            a.length !== b.length
+        ) {
+            return false;
+        }
+
+        return a.every((value, index) =>
+            isEqual_myVersion(value, b[index])
+        );
+    }
+
+    // Objects
     const keysA = Object.keys(a);
     const keysB = Object.keys(b);
 
