@@ -2,7 +2,7 @@
 function isEmpty(s) {
     return s.length === 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(isEmpty(""), true)
 Test.assertEquals(isEmpty(" "), false)
 Test.assertEquals(isEmpty("            "), false)

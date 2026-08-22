@@ -2,7 +2,7 @@
 function profitableGamble(prob, prize, pay) {
     return prob * prize > pay;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(profitableGamble(0.2, 50, 9), true)
 Test.assertEquals(profitableGamble(0.9, 1, 2), false)
 Test.assertEquals(profitableGamble(0.9, 3, 2), true)

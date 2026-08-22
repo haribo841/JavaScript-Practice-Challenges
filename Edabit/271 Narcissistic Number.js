@@ -1,6 +1,6 @@
 ﻿//Create a function that returns true or false depending upon whether the given number n is a Narcissistic number or not.
 function isNarcissistic(n) {
-    return String(n).split('').reduce((acc, digit) => acc + Math.pow(parseInt(digit, 10), String(n).length), 0) === n;
+    return String(n).split('').reduce((acc, digit) => acc + Number.parseInt(digit, 10) ** String(n).length, 0) === n;
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(isNarcissistic(1), true, "1 is narcissistic")

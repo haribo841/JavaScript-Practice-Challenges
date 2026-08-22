@@ -5,7 +5,7 @@
 //If the number is less than the lower limit of the range, the lower limit should be returned.
 //If the number is greater than the upper limit of the range, the upper limit should be returned.
 function limitNumber(num, rangeLow, rangeHigh) {
-    return num < rangeLow ? rangeLow : num > rangeHigh ? rangeHigh : num;
+    return Math.max(rangeLow, Math.min(num, rangeHigh));
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(limitNumber(5, 1, 10), 5)

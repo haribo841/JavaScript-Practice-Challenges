@@ -1,22 +1,13 @@
-const Test = {
-  assertEquals: function (actual, expected, message) {
-    if (JSON.stringify(actual) === JSON.stringify(expected)) {
-      console.log("Test passed.");
-    } else {
-      console.error("Test failed:", message);
-      console.error("Expected:", expected, "but got:", actual);
-    }
-  },
+import assert from 'node:assert/strict';
 
- assertNotEquals: function (actual, notExpected, message) {
-     if (actual !== notExpected) {
-         console.log("Test passed.");
-     } else {
-         console.error("Test failed:", message);
-         console.error("Did not expect the same object reference.");
-     }
-    }
-  }
-;
-export const assertEquals = Test.assertEquals;
-export const assertNotEquals = Test.assertNotEquals;
+export function assertEquals(actual, expected, message) {
+  assert.deepStrictEqual(actual, expected, message);
+}
+
+export function assertNotEquals(actual, notExpected, message) {
+  assert.notStrictEqual(actual, notExpected, message);
+}
+
+export function assertThrows(callback, expected, message) {
+  assert.throws(callback, expected, message);
+}

@@ -3,7 +3,7 @@ function reverse(bool) {
     if (typeof (bool) === "boolean") return !bool;
     return "boolean expected";
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(reverse(false), true)
 Test.assertEquals(reverse(true), false)
 Test.assertEquals(reverse(0), "boolean expected")

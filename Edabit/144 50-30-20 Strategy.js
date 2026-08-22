@@ -7,7 +7,11 @@ Given the after-tax income as ati,
 what you are supposed to do is to make a function that will
 return an object that shows how much a person needs to spend on needs, wants, and savings.*/
 function fiftyThirtyTwenty(ati) {
-    return
+    return {
+        "Needs": ati * 0.5,
+        "Wants": ati * 0.3,
+        "Savings": ati * 0.2
+    }
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(fiftyThirtyTwenty(10000), { "Needs": 5000, "Wants": 3000, "Savings": 2000 })

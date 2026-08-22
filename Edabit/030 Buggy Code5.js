@@ -1,15 +1,15 @@
 //Mubashir created an infinite loop!
 //Help him by fixing the code in the code tab to pass this challenge.
 function printArray(number) {
-    var newArray = [];
+    const newArray = [];
 
-    for (var i = 1; i <= number; i++) {
+    for (let i = 1; i <= number; i++) {
         newArray.push(i);
     }
 
     return newArray;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(printArray(1), [1])
 Test.assertEquals(printArray(2), [1, 2])
 Test.assertEquals(printArray(3), [1, 2, 3])

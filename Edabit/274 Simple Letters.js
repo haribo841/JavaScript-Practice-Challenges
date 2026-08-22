@@ -1,6 +1,6 @@
 ﻿//Create a function that takes two lowercase strings str1 and str2 of letters from a to z and returns the sorted and longest string containing distinct letters.
 function longestString(str1, str2) {
-    return [...new Set(str1 + str2)].sort().join('');
+    return [...new Set(str1 + str2)].sort((left, right) => left.localeCompare(right, 'en')).join('');
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(longestString("mubashir", "edabit"), "abdehimrstu")

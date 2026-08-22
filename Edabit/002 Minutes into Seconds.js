@@ -2,7 +2,7 @@
 function convert(minutes) {
     return minutes * 60;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(convert(6), 360)
 Test.assertEquals(convert(4), 240)
 Test.assertEquals(convert(8), 480)

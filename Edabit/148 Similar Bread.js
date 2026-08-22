@@ -4,7 +4,7 @@ function hasSameBread(arr1, arr2) {
     return arr1[0] === arr2[0] && arr1[arr1.length - 1] === arr2[arr2.length - 1];
 }
 import { assertEquals } from '../testHelper.js';
-Test.assertEquals(hasSameBread(
+assertEquals(hasSameBread(
     ["white bread", "lettuce", "white bread"],
     ["white bread", "tomato", "white bread"]
 ), true)

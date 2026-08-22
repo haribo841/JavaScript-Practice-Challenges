@@ -7,7 +7,7 @@ function maxNum(n1, n2) {
 		return n1
 	}
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(maxNum(3, 7), 7)
 Test.assertEquals(maxNum(-1, 0), 0)
 Test.assertEquals(maxNum(1000, 400), 1000)

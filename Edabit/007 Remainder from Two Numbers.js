@@ -4,7 +4,7 @@ have a remainder, possibly zero. Return that value.*/
 function remainder(x, y) {
     return x % y;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(remainder(7, 2), 1)
 Test.assertEquals(remainder(3, 4), 3)
 Test.assertEquals(remainder(-9, 45), -9)

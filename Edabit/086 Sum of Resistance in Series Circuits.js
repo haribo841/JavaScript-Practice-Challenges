@@ -1,6 +1,7 @@
 //Create a function that takes an array of values resistance that are connected in series, and calculates the total resistance of the circuit in ohms. 
 function seriesResistance(arr) {
-    return arr.reduce((a, b) => a + b, 0) + (arr.reduce((a, b) => a + b, 0) === 1 ? " ohm" : " ohms");
+    const total = Number(arr.reduce((a, b) => a + b, 0).toFixed(10));
+    return total + (total <= 1 ? " ohm" : " ohms");
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(seriesResistance([1, 5, 6, 3]), "15 ohms")

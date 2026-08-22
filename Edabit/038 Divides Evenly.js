@@ -3,7 +3,7 @@
 function dividesEvenly(a, b) {
     return a % b === 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(dividesEvenly(98, 7), true)
 Test.assertEquals(dividesEvenly(87, 49), false)
 Test.assertEquals(dividesEvenly(34, 14), false)

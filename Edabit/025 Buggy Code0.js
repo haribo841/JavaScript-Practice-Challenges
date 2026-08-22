@@ -6,6 +6,6 @@ function has_bugs(buggy_code) {
 		return "it's a good day";
 	}
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(has_bugs(true), "sad days")
 Test.assertEquals(has_bugs(false), "it's a good day")

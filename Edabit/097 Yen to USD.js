@@ -1,6 +1,6 @@
 //Create a function that can turn JPY (Japanese yen) to USD (American dollar).
 function yenToUsd(yen) {
-    return yen / 107.5
+    return Number((yen / 107.5).toFixed(2))
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(yenToUsd(1), 0.01)

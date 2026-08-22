@@ -2,7 +2,7 @@
 function inchesToFeet(inches) {
     return Math.floor(inches / 12);
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(inchesToFeet(12), 1)
 Test.assertEquals(inchesToFeet(360), 30)
 Test.assertEquals(inchesToFeet(3612), 301)

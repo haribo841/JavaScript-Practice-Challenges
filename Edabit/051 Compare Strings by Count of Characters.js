@@ -3,7 +3,7 @@
 function comp(str1, str2) {
     return str1.length === str2.length;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(comp("AB", "CD"), true)
 Test.assertEquals(comp("ABC", "DE"), false)
 Test.assertEquals(comp("hello", "edabit"), false)

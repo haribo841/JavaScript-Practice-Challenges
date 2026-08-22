@@ -1,6 +1,6 @@
 ﻿//Given an array, rotate the values clockwise by one (the last value is sent to the first position).
 function rotateByOne(arr) {
-    return [arr[arr.length - 1], ...arr.slice(0, arr.length - 1)]
+    return [arr[arr.length - 1], ...arr.slice(0, -1)]
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(rotateByOne([1, 2, 3, 4, 5]), [5, 1, 2, 3, 4])

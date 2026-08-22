@@ -7,7 +7,7 @@ function greeting(name) {
     }
     else { return "Hello, " + name + "!"; }
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(greeting("Matt"), "Hello, Matt!")
 Test.assertEquals(greeting("Helen"), "Hello, Helen!")
 Test.assertEquals(greeting("Mubashir"), "Hello, my Love!")

@@ -1,6 +1,7 @@
 ﻿//Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
 function greaterThanOne(frac) {
-    return eval(frac) > 1;
+    const [numerator, denominator] = frac.split('/').map(Number);
+    return numerator / denominator > 1;
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(greaterThanOne("1/2"), false)

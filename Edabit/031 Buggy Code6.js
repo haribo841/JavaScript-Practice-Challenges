@@ -1,9 +1,9 @@
 //Mubashir wants to remove numbers from a given string!
 //Help him by fixing the code in the code tab to pass this challenge.
 function removeNumbers(str) {
-    return str.split('').filter(c => isNaN(parseInt(c))).join('');
+    return str.split('').filter(c => Number.isNaN(Number.parseInt(c))).join('');
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(removeNumbers("mubashir1"), "mubashir")
 Test.assertEquals(removeNumbers("12ma23tt"), "matt")
 Test.assertEquals(removeNumbers("e1d2a3b4i5t6"), "edabit")

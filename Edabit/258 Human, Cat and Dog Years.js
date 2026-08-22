@@ -1,10 +1,11 @@
 ﻿//Create a function which takes an argument of humanYears and returns [humanYears, catYears, dogYears] array.
 function calculateYears(humanYears) {
-    return [
-        humanYears,
-        humanYears === 1 ? 15 : humanYears === 2 ? 24 : 24 + (humanYears - 2) * 4,
-        humanYears === 1 ? 15 : humanYears === 2 ? 24 : 24 + (humanYears - 2) * 5
-    ]
+    if (humanYears === 1) return [1, 15, 15];
+    if (humanYears === 2) return [2, 24, 24];
+
+    const catYears = 24 + (humanYears - 2) * 4;
+    const dogYears = 24 + (humanYears - 2) * 5;
+    return [humanYears, catYears, dogYears];
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(calculateYears(1), [1, 15, 15])

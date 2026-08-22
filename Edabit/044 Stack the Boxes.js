@@ -2,7 +2,7 @@
 function stackBoxes(n) {
     return n * n;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(stackBoxes(1), 1)
 Test.assertEquals(stackBoxes(2), 4)
 Test.assertEquals(stackBoxes(0), 0)

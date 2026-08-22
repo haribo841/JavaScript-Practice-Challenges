@@ -2,7 +2,7 @@
 function howManyStickers(n) {
     return 6 * n * n;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(howManyStickers(1), 6)
 Test.assertEquals(howManyStickers(2), 24)
 Test.assertEquals(howManyStickers(3), 54)

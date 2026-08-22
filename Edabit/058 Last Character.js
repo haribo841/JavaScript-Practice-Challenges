@@ -3,7 +3,7 @@
 function isLastCharacterN(word) {
     return word.charAt(word.length - 1).toLowerCase() === 'n';
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(isLastCharacterN("Aiden"), true)
 Test.assertEquals(isLastCharacterN("Roxy"), false)
 Test.assertEquals(isLastCharacterN("Bert"), false)

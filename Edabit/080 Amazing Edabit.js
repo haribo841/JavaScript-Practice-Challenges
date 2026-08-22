@@ -1,7 +1,7 @@
 //Create a function that takes a string and changes the word amazing to not amazing.
 //Return the string without any change if the word edabit is part of the string.
 function amazingEdabit(str) {
-    return str.includes("edabit") ? str : str.replace(/amazing/g, "not amazing");
+    return str.includes("edabit") ? str : str.replaceAll("amazing", "not amazing");
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(amazingEdabit("edabit is amazing."), "edabit is amazing.")

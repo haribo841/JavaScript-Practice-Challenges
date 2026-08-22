@@ -8,144 +8,73 @@ Arguments
 value (can be anything): The first value to compare.
 other (can be anything): The other value to compare against.
 returns: (boolean): Returns true if they are the same, otherwise false.*/
-function isEqual_myVersion(a, b) {
-    // Te same wartości/referencje
-    if (a === b) {
-        return true;
+function areDatesEqual(a, b) {
+    return a instanceof Date && b instanceof Date && a.getTime() === b.getTime();
+}
+
+function areRegularExpressionsEqual(a, b) {
+    return a instanceof RegExp && b instanceof RegExp && a.source === b.source && a.flags === b.flags;
+}
+
+function areTypedArraysEqual(a, b) {
+    if (!ArrayBuffer.isView(a) || !ArrayBuffer.isView(b)) return false;
+    if (a.constructor !== b.constructor || a.length !== b.length) return false;
+    return Array.from(a).every((value, index) => value === b[index]);
+}
+
+function areSetsEqual(a, b) {
+    if (!(a instanceof Set) || !(b instanceof Set) || a.size !== b.size) return false;
+
+    const unmatchedValues = [...b];
+    for (const valueA of a) {
+        const matchingIndex = unmatchedValues.findIndex(valueB => isEqual_myVersion(valueA, valueB));
+        if (matchingIndex === -1) return false;
+        unmatchedValues.splice(matchingIndex, 1);
     }
+    return true;
+}
 
-    // NaN === NaN według _.isEqual()
-    if (Number.isNaN(a) && Number.isNaN(b)) {
-        return true;
-    }
+function areArraysEqual(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+    return a.every((value, index) => isEqual_myVersion(value, b[index]));
+}
 
-    // null lub różne typy
-    if (
-        a === null ||
-        b === null ||
-        typeof a !== "object" ||
-        typeof b !== "object"
-    ) {
-        return false;
-    }
-
-    // Date
-    if (a instanceof Date || b instanceof Date) {
-        return (
-            a instanceof Date &&
-            b instanceof Date &&
-            a.getTime() === b.getTime()
-        );
-    }
-
-    // RegExp
-    if (a instanceof RegExp || b instanceof RegExp) {
-        return (
-            a instanceof RegExp &&
-            b instanceof RegExp &&
-            a.source === b.source &&
-            a.flags === b.flags
-        );
-    }
-
-    // Typed arrays
-    if (ArrayBuffer.isView(a) || ArrayBuffer.isView(b)) {
-        if (
-            !ArrayBuffer.isView(a) ||
-            !ArrayBuffer.isView(b) ||
-            a.constructor !== b.constructor ||
-            a.length !== b.length
-        ) {
-            return false;
-        }
-
-        return Array.from(a).every(
-            (value, index) => value === b[index]
-        );
-    }
-
-    // Set
-    if (a instanceof Set || b instanceof Set) {
-        if (
-            !(a instanceof Set) ||
-            !(b instanceof Set) ||
-            a.size !== b.size
-        ) {
-            return false;
-        }
-
-        const valuesB = [...b];
-
-        return [...a].every(valueA => {
-            const index = valuesB.findIndex(valueB =>
-                isEqual_myVersion(valueA, valueB)
-            );
-
-            if (index === -1) {
-                return false;
-            }
-
-            valuesB.splice(index, 1);
-            return true;
-        });
-    }
-
-    // Arrays
-    if (Array.isArray(a) || Array.isArray(b)) {
-        if (
-            !Array.isArray(a) ||
-            !Array.isArray(b) ||
-            a.length !== b.length
-        ) {
-            return false;
-        }
-
-        return a.every((value, index) =>
-            isEqual_myVersion(value, b[index])
-        );
-    }
-
-    // Objects
+function areObjectsEqual(a, b) {
     const keysA = Object.keys(a);
     const keysB = Object.keys(b);
-
-    if (keysA.length !== keysB.length) {
-        return false;
-    }
-
-    return keysA.every(
-        key =>
-            Object.prototype.hasOwnProperty.call(b, key) &&
-            isEqual_myVersion(a[key], b[key])
-    );
+    if (keysA.length !== keysB.length) return false;
+    return keysA.every(key => Object.hasOwn(b, key) && isEqual_myVersion(a[key], b[key]));
 }
+
+function isEqual_myVersion(a, b) {
+    if (a === b) return true;
+    if (Number.isNaN(a) && Number.isNaN(b)) return true;
+    if (a === null || b === null || typeof a !== "object" || typeof b !== "object") return false;
+    if (a instanceof Date || b instanceof Date) return areDatesEqual(a, b);
+    if (a instanceof RegExp || b instanceof RegExp) return areRegularExpressionsEqual(a, b);
+    if (ArrayBuffer.isView(a) || ArrayBuffer.isView(b)) return areTypedArraysEqual(a, b);
+    if (a instanceof Set || b instanceof Set) return areSetsEqual(a, b);
+    if (Array.isArray(a) || Array.isArray(b)) return areArraysEqual(a, b);
+    return areObjectsEqual(a, b);
+}
+
 import { assertEquals } from '../testHelper.js';
-//const _ = require("lodash")
-import _ from "lodash";
 const cars = [
     { make: "mazda", year: 2020, color: "red", isUsed: false },
     { make: "mazda", year: 2020, color: "red", isUsed: false },
-    { make: "mazda", year: 2018, color: "blue", isUsed: true },
-    { make: "toyota", year: 2018, color: "blue", isUsed: true },
-    { make: "toyota", year: 2017, color: "grey", isUsed: true },
-    { make: "ford", year: 2017, color: "grey", isUsed: true },
-    { make: "for", year: 2020, color: "red", isUsed: false },
+    { make: "mazda", year: 2018, color: "blue", isUsed: true }
 ];
 const carsAsObject = {
     stall1: { make: "mazda", year: 2020, color: "red", isUsed: false },
     stall2: { make: "mazda", year: 2020, color: "red", isUsed: false },
-    stall3: { make: "mazda", year: 2018, color: "blue", isUsed: true },
-    stall4: { make: "toyota", year: 2018, color: "blue", isUsed: true },
-    stall5: { make: "toyota", year: 2017, color: "grey", isUsed: true },
-    stall6: { make: "ford", year: 2017, color: "grey", isUsed: true },
-    stall7: { make: "for", year: 2020, color: "red", isUsed: false },
+    stall3: { make: "mazda", year: 2018, color: "blue", isUsed: true }
 };
 
-// Lodash Tests
-assertEquals(_.isEqual(cars[0], cars[1]), isEqual_myVersion(cars[0], cars[1]));
-assertEquals(_.isEqual(cars[0], cars[2]), isEqual_myVersion(cars[0], cars[2]));
-assertEquals(_.isEqual(cars, Object.values(carsAsObject)), isEqual_myVersion(cars, Object.values(carsAsObject)));
-assertEquals(
-    _.isEqual(carsAsObject.stall1.year, carsAsObject.stall2.year),
-    isEqual_myVersion(carsAsObject.stall1.year, carsAsObject.stall2.year)
-);
+assertEquals(isEqual_myVersion(cars[0], cars[1]), true)
+assertEquals(isEqual_myVersion(cars[0], cars[2]), false)
+assertEquals(isEqual_myVersion(cars, Object.values(carsAsObject)), true)
+assertEquals(isEqual_myVersion(Number.NaN, Number.NaN), true)
+assertEquals(isEqual_myVersion(new Date("2026-01-01"), new Date("2026-01-01")), true)
+assertEquals(isEqual_myVersion(/edabit/gi, /edabit/gi), true)
+assertEquals(isEqual_myVersion(new Uint8Array([1, 2]), new Uint8Array([1, 2])), true)
+assertEquals(isEqual_myVersion(new Set([1, { value: 2 }]), new Set([{ value: 2 }, 1])), true)

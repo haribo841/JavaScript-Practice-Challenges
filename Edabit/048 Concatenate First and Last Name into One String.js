@@ -2,7 +2,7 @@
 function concatName(firstName, lastName) {
     return `${lastName}, ${firstName}`; // Template literal syntax
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(concatName("John", "Doe"), "Doe, John")
 Test.assertEquals(concatName("First", "Last"), "Last, First")
 Test.assertEquals(concatName("A", "B"), "B, A")

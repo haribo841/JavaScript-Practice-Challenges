@@ -4,7 +4,7 @@ function swap(a, b) {
 	[a, b] = [b, a];
 	return [a, b]
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(swap(100, 200), [200, 100])
 Test.assertEquals(swap(44, 33), [33, 44])
 Test.assertEquals(swap(21, 12), [12, 21])

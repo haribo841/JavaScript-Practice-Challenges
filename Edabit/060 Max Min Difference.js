@@ -2,7 +2,7 @@
 function difference(nums) {
     return Math.max(...nums) - Math.min(...nums);
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(difference([-9, -8, 6, -9, 15, 6]), 24)
 Test.assertEquals(difference([-5, 6, 18, 4, 16, -2]), 23)
 Test.assertEquals(difference([-2, 20, -9, -9, -2, -7]), 29)

@@ -1,7 +1,9 @@
 ﻿//Given a pH value, return whether that value is "alkaline" (greater than 7), "acidic" (less than 7), or "neutral" (7).
 //Return "invalid" if the value given is less than 0 or greater than 14.
 function pHName(pH) {
-    return pH < 0 || pH > 14 ? "invalid" : pH === 7 ? "neutral" : pH < 7 ? "acidic" : "alkaline";
+    if (pH < 0 || pH > 14) return "invalid";
+    if (pH === 7) return "neutral";
+    return pH < 7 ? "acidic" : "alkaline";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(pHName(7.0), "neutral")

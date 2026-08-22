@@ -1,6 +1,6 @@
 //Fix the code so the function returns true if and only if x is equal to 7.
 function isSeven(x) {
-	return x == "7" ? true : false;
+	return x === 7;
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(isSeven(4), false)

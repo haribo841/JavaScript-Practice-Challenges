@@ -2,7 +2,7 @@
 function addition(num) {
    return num + 1;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(addition(2), 3, "2 plus 1 equals 3.")
 Test.assertEquals(addition(-9), -8, "-8 plus 1 equals -9.")
 Test.assertEquals(addition(0), 1, "0 plus 1 equals 1.")

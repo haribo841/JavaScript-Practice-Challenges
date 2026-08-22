@@ -2,7 +2,7 @@
 //toInt() : A function to convert a string to an integer.
 //toStr() : A function to convert an integer to a string.
 function toInt(str) {
-    return parseInt(str, 10);
+    return Number.parseInt(str, 10);
 }
 
 function toStr(int) {

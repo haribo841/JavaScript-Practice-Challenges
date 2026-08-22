@@ -2,7 +2,7 @@
 function nextEdge(side1, side2) {
     return (side1 + side2) - 1;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(nextEdge(5, 4), 8)
 Test.assertEquals(nextEdge(8, 3), 10)
 Test.assertEquals(nextEdge(7, 9), 15)

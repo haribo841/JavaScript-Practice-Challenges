@@ -4,7 +4,7 @@
 function shouldServeDrinks(age, onBreak) {
     return age >= 18 && !onBreak;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(shouldServeDrinks(17, true), false)
 Test.assertEquals(shouldServeDrinks(30, true), false)
 Test.assertEquals(shouldServeDrinks(24, false), true)

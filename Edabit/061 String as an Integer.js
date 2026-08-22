@@ -1,8 +1,8 @@
 //Create a function that takes a string and returns it as an integer.
 function stringInt(str) {
-    return parseInt(str);
+    return Number.parseInt(str);
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(stringInt("6"), 6)
 Test.assertEquals(stringInt("2"), 2)
 Test.assertEquals(stringInt("10"), 10)

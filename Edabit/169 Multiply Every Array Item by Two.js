@@ -5,4 +5,4 @@ function getMultipliedArr(arr) {
 import { assertEquals } from '../testHelper.js';
 assertEquals(getMultipliedArr([2, 5, 3]), [4, 10, 6])
 assertEquals(getMultipliedArr([1, 86, -5]), [2, 172, -10])
-assertEquals(getMultipliedArr([5, 382, 0])
+assertEquals(getMultipliedArr([5, 382, 0]), [10, 764, 0])

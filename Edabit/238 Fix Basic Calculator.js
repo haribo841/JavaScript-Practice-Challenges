@@ -2,7 +2,6 @@
 //His function should return the result of the corresponding mathematical function on both numbers.
 //If the operator is not one of the specified characters +, -, /, *, the function should return -1.
 function basicCalculator(a, o, b) {
-	var result = null;
 	if (o === "+") {
 		return a + b;
 	} else if (o === "-") {
@@ -11,11 +10,11 @@ function basicCalculator(a, o, b) {
 		if (o === "/" && b !== 0) {
 			return a / b;
 		}
-		if (o === "*") {
-			return a * b;
-		}
-		return result;
+	if (o === "*") {
+		return a * b;
 	}
+	return null;
+}
 import { assertEquals } from '../testHelper.js';
 assertEquals(basicCalculator(2, '+', 4), 6)
 assertEquals(basicCalculator(12, '-', 6), 6)

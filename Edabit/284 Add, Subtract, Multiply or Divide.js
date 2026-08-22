@@ -1,10 +1,11 @@
 ﻿//Write a function that takes two numbers and returns if they should be added, subtracted, multiplied or divided to get 24.
 //If none of the operations can give 24, return null.
 function operation(num1, num2) {
-    return num1 + num2 === 24 ? "added" :
-        num1 - num2 === 24 ? "subtracted" :
-            num1 * num2 === 24 ? "multiplied" :
-                num1 / num2 === 24 ? "divided" : null
+    if (num1 + num2 === 24) return "added";
+    if (num1 - num2 === 24) return "subtracted";
+    if (num1 * num2 === 24) return "multiplied";
+    if (num1 / num2 === 24) return "divided";
+    return null;
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(operation(12, 12), "added")

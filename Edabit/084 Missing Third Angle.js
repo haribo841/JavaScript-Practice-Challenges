@@ -5,10 +5,11 @@
 //An obtuse angle is greater than 90 degrees(but less than 180 degrees).
 //For example: missingAngle(11, 20) should return "obtuse", since the missing angle would be 149 degrees, which makes it obtuse.
 function missingAngle(angle1, angle2) {
-    return angle1 + angle2 < 90 ? "obtuse" :
-        angle1 + angle2 === 90 ? "right" :
-            angle1 + angle2 < 180 ? "acute" :
-                "invalid"; // This case is added to handle angles that sum to 180 or more.
+    const angleSum = angle1 + angle2;
+    if (angleSum < 90) return "obtuse";
+    if (angleSum === 90) return "right";
+    if (angleSum < 180) return "acute";
+    return "invalid";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(missingAngle(27, 59), "obtuse")

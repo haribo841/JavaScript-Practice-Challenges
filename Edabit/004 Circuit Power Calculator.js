@@ -2,7 +2,7 @@
 function circuitPower(voltage, current) {
     return voltage * current;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(circuitPower(110, 3), 330)
 Test.assertEquals(circuitPower(230, 10), 2300)
 Test.assertEquals(circuitPower(480, 20), 9600)

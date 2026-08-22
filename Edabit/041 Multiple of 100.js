@@ -2,7 +2,7 @@
 function divisible(num) {
     return num % 100 === 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(divisible(1), false)
 Test.assertEquals(divisible(100), true)
 Test.assertEquals(divisible(1000), true)

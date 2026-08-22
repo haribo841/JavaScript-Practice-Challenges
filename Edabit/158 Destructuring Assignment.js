@@ -13,7 +13,7 @@ However, this is long and tedious.
 Instead, we can use Object Destructuring to create all those variables in one line.
 Your task: Create variables first, second, third and other from the given array using Destructuring Assignment
 Your task is to unpack the arr writeyourcodehere into four variables, first, second, third, and other.*/
-writeyourcodehere = [1, 2, 3, 4, 5, 6, 7, 8]
+const writeyourcodehere = [1, 2, 3, 4, 5, 6, 7, 8]
 const [first, second, third, ...other] = writeyourcodehere;
 import { assertEquals } from '../testHelper.js';
 assertEquals(first, 1)

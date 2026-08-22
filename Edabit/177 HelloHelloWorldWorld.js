@@ -3,7 +3,10 @@
 //If the number is a multiple of 5, return "World".
 //If the number is a multiple of both 3 and 5, return "Hello World".
 function helloWorld(num) {
-    return num % 15 === 0 ? "Hello World" : num % 3 === 0 ? "Hello" : num % 5 === 0 ? "World" : "";
+    if (num % 15 === 0) return "Hello World";
+    if (num % 3 === 0) return "Hello";
+    if (num % 5 === 0) return "World";
+    return "";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(helloWorld(3), "Hello")

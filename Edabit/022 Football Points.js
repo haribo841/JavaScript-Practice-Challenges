@@ -3,7 +3,7 @@
 function footballPoints(wins, draws, losses) {
     return wins * 3 + draws;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(footballPoints(1, 2, 3), 5)
 Test.assertEquals(footballPoints(5, 5, 5), 20)
 Test.assertEquals(footballPoints(1, 0, 0), 3)

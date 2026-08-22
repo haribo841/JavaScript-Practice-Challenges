@@ -3,7 +3,7 @@
 function timeForMilkAndCookies(date) {
     return date.getMonth() === 11 && date.getDate() === 24;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(timeForMilkAndCookies(new Date(2013, 11, 24)), true)
 Test.assertEquals(timeForMilkAndCookies(new Date(3000, 11, 24)), true)
 Test.assertEquals(timeForMilkAndCookies(new Date(2154, 11, 11)), false)

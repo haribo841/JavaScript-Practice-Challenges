@@ -2,7 +2,7 @@
 function frames(minutes, fps) {
     return minutes * fps * 60;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(frames(1, 1), 60)
 Test.assertEquals(frames(10, 1), 600)
 Test.assertEquals(frames(10, 25), 15000)

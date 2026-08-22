@@ -1,6 +1,8 @@
 ﻿//Create a function that takes in year and months as input, then return what year it would be after n-months have elapsed.
 function afterNMonths(year, months) {
-    return months === undefined ? "month missing" : year === undefined ? "year missing" : year + Math.floor(months / 12);
+    if (months === undefined) return "month missing";
+    if (year === undefined) return "year missing";
+    return year + Math.floor(months / 12);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(afterNMonths(2020, 24), 2022)

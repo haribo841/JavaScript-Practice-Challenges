@@ -2,7 +2,7 @@
 function sumPolygon(n) {
     return (n - 2) * 180;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(sumPolygon(3), 180)
 Test.assertEquals(sumPolygon(4), 360)
 Test.assertEquals(sumPolygon(5), 540)

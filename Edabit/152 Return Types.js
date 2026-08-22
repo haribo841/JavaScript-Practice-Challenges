@@ -10,4 +10,4 @@ assertEquals(arrayValuesTypes([[], true]), ['object', 'boolean']);
 assertEquals(arrayValuesTypes([false, false, "true"]), ['boolean', 'boolean', "string"]);
 assertEquals(arrayValuesTypes([1, 10]), ['number', 'number']);
 assertEquals(arrayValuesTypes([undefined, null]), ['undefined', 'object']);
-assertEquals(arrayValuesTypes([function () { let x = 10; }, 10]), ['function', 'number']);
+assertEquals(arrayValuesTypes([function () {}, 10]), ['function', 'number']);

@@ -1,5 +1,5 @@
 function hello() {
     return "hello world";
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(hello(), "hello world", "Did you *return* the result?");

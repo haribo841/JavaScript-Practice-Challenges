@@ -6,8 +6,8 @@ function twoMethods() {
 	// find and equals are not regular expression methods.  Replace them.
 	//	let methodOne = /hello/.find("hello")[0] === "hello"
 	// 	let methodTwo = /hello/.equals("hello") // returns a boolean
-	let methodOne = /hello/.test("hello")
-	let methodTwo = /hello/.exec("hello") // returns an iterator
+	const methodOne = /hello/.test("hello")
+	const methodTwo = /hello/.exec("hello") // returns an iterator
 	return methodOne && !!methodTwo
 }
 import { assertEquals } from '../testHelper.js';

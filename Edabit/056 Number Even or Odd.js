@@ -2,7 +2,7 @@
 function isEvenOrOdd(num) {
     return num % 2 === 0 ? "even" : "odd";
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(isEvenOrOdd(3), "odd")
 Test.assertEquals(isEvenOrOdd(0), "even")
 Test.assertEquals(isEvenOrOdd(7), "odd")

@@ -2,7 +2,7 @@
 function cubes(a) {
 	return a ** 3;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(cubes(2), 8)
 Test.assertEquals(cubes(3), 27)
 Test.assertEquals(cubes(4), 64)

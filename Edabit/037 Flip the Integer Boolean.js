@@ -2,7 +2,7 @@
 function flipBool(b) {
     return b ? 0 : 1;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(flipBool(1), 0)
 Test.assertEquals(flipBool(true), 0)
 Test.assertEquals(flipBool(0), 1)

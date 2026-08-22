@@ -13,7 +13,7 @@ let email;
 let rest;
 const str = `({ name, email, ...rest } = user ).toString()`;
 import { assertEquals } from '../testHelper.js';
-eval(str)// NOSONAR
+eval(str)
 
 function validUser() {
 	return JSON.stringify(user) === JSON.stringify({ name: "John", email: "john@example.com", city: "Phoenix", state: "AZ", country: "USA" }) ? "valid" : "not valid"

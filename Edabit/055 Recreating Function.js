@@ -1,12 +1,13 @@
 //Create a function that recreates Math.abs().
 function absolute(n) {
+    if (n === 0) return 0;
     return n > 0 ? n : -n;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 const excludes = f => !/Math\.abs/.test(f);
 Test.assertNotEquals(excludes(absolute), false, "A restricted function is found!");
 
-let [numVector, resVector] = [
+const [numVector, resVector] = [
     [-5, -3.14, 250, 0, 6.28, 11037, -12.1320, -1.217197940, 434.6022, -130.406, 26.35,
     -901.732, 868.543, -566.26, 41.05, -889.68, -746.2169, -761.19, 982.503, -733.379,
     -374.406, 601.091, -833.14, -205.7941, -985.92, -432.627, -624.0324, 450.144, 190.319,
@@ -32,4 +33,4 @@ let [numVector, resVector] = [
         521.8522, 740.261, 735.7873
     ]
 ]
-for (let i in numVector) Test.assertEquals(absolute(numVector[i]), resVector[i])
+for (const i in numVector) Test.assertEquals(absolute(numVector[i]), resVector[i])

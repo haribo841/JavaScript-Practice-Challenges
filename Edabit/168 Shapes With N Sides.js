@@ -24,6 +24,7 @@ function nSidedShape(n) {
         9: "nonagon",
         10: "decagon"
     };
+    return shapes[n];
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(nSidedShape(1), "circle")

@@ -1,6 +1,6 @@
 ﻿//Create a function which takes a number and returns the maximum value by rearranging its digits.
 function rotateMaxNumber(num) {
-    return parseInt(String(num).split('').sort((a, b) => b - a).join(''), 10);
+    return Number.parseInt(String(num).split('').sort((a, b) => b - a).join(''), 10);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(rotateMaxNumber(123), 321)

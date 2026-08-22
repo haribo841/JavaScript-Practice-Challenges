@@ -1,6 +1,6 @@
 //Create a function that returns the ASCII value of the passed in character.
 function ctoa(c) {
-    return c.charCodeAt(0);
+    return c.codePointAt(0);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(ctoa(' '), 32)

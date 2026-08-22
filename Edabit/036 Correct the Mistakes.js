@@ -2,7 +2,7 @@
 function squared(b) {
 	return b * b
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(squared(10), 100, "Expected 100")
 Test.assertEquals(squared(69), 4761, "Expected 4761")
 Test.assertEquals(squared(666), 443556, "Expected 443556")

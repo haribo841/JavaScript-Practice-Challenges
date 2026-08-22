@@ -1,6 +1,6 @@
 ﻿//Given any number of parameters, return true if none of the arguments are falsy.
-function nothingIsNothing() {
-    return [...arguments].every(arg => Boolean(arg));
+function nothingIsNothing(...args) {
+    return args.every(Boolean);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(nothingIsNothing(0, false, [], {}), false)

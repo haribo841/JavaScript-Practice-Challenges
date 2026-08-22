@@ -2,7 +2,7 @@
 function lessThan100(a, b) {
     return a+b < 100;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(lessThan100(5, 57), true)
 Test.assertEquals(lessThan100(77, 30), false)
 Test.assertEquals(lessThan100(0, 59), true)

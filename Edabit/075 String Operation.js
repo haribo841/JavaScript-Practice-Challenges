@@ -1,11 +1,13 @@
 //Create a function that takes two numbers and a mathematical operator and returns the result.
 function calculate(num1, num2, op) {
-    return op === "+" ? num1 + num2 :
-           op === "-" ? num1 - num2 :
-           op === "*" ? num1 * num2 :
-           op === "/" ? num1 / num2 :
-           op === "%" ? num1 % num2 :
-           null;
+    switch (op) {
+        case "+": return num1 + num2;
+        case "-": return num1 - num2;
+        case "*": return num1 * num2;
+        case "/": return num1 / num2;
+        case "%": return num1 % num2;
+        default: return null;
+    }
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(calculate(24, 100, "-"), -76)

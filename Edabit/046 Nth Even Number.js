@@ -2,7 +2,7 @@
 function nthEven(n) {
     return (n - 1) * 2;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(nthEven(1), 0)
 Test.assertEquals(nthEven(2), 2)
 Test.assertEquals(nthEven(3), 4)

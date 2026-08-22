@@ -3,7 +3,7 @@
 //the second argument(times) is the number of times the item is to be repeated.
 //Return the result in an array.
 function repeat(item, times) {
-    return Array(times).fill(item);
+    return new Array(times).fill(item);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(repeat("edabit", 3), ["edabit", "edabit", "edabit"]);

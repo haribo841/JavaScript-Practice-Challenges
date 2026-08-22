@@ -2,7 +2,7 @@
 function area(h, w) {
     return (h > 0 && w > 0) ? h * w : -1;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(area(5, 3), 15)
 Test.assertEquals(area(8, 5), 40)
 Test.assertEquals(area(5, 4), 20)

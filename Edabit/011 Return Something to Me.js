@@ -2,7 +2,7 @@
 function giveMeSomething(a) {
     return `something ${a}`;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(giveMeSomething("a"), "something a")
 Test.assertEquals(giveMeSomething("is cooking"), "something is cooking")
 Test.assertEquals(giveMeSomething(" is cooking"), "something  is cooking")

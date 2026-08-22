@@ -6,7 +6,7 @@
 //Return an empty array if there are no even numbers, or odd.
 function cleanUpArray(arr) {
     return arr.reduce((acc, val) => {
-        const num = parseInt(val);
+        const num = Number.parseInt(val);
         if (num % 2 === 0) {
             acc[0].push(num);
         } else {

@@ -2,7 +2,7 @@
 function isOdd(num) {
 	return num % 2 != 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(isOdd(-5), true)
 Test.assertEquals(isOdd(-50), false)
 Test.assertEquals(isOdd(0), false)

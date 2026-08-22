@@ -2,7 +2,7 @@
 function divisibleByFive(n) {
     return n % 5 === 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(divisibleByFive(7), false)
 Test.assertEquals(divisibleByFive(5), true)
 Test.assertEquals(divisibleByFive(15), true)

@@ -2,7 +2,7 @@
 function totalCups(n) {
     return n + Math.floor(n/6);
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(totalCups(6), 7)
 Test.assertEquals(totalCups(3), 3)
 Test.assertEquals(totalCups(7), 8)

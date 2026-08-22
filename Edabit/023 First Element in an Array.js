@@ -2,7 +2,7 @@
 function getFirstValue(arr) {
     return arr[0];
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(getFirstValue([1, 2, 3]), 1)
 Test.assertEquals(getFirstValue([80, 5, 100]), 80)
 Test.assertEquals(getFirstValue([-500, 0, 50]), -500)

@@ -5,7 +5,11 @@
 //I is misinterpreted as 1
 //The test cases contain numbers only by mistake.
 function keyboardMistakes(str) {
-    return str.replace(/4/g, "A").replace(/5/g, "S").replace(/0/g, "O").replace(/1/g, "I")
+    return str
+        .replaceAll("4", "A")
+        .replaceAll("5", "S")
+        .replaceAll("0", "O")
+        .replaceAll("1", "I")
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(keyboardMistakes("MUB45H1R"), "MUBASHIR")

@@ -2,7 +2,7 @@
 function oddOrEven(s) {
     return s.length % 2 === 0;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(oddOrEven("apples"), true)
 Test.assertEquals(oddOrEven("banana"), true)
 Test.assertEquals(oddOrEven("cherry"), true)

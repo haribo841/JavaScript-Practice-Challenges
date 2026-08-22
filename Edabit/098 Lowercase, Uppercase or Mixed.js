@@ -1,7 +1,9 @@
 //Create a function which returns "upper" if all the letters in a word are uppercase,
 //"lower" if lowercase and "mixed" for any mix of the two.
 function getCase(str) {
-    return str === str.toUpperCase() ? "upper" : str === str.toLowerCase() ? "lower" : "mixed"
+    if (str === str.toUpperCase()) return "upper";
+    if (str === str.toLowerCase()) return "lower";
+    return "mixed";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(getCase("whisper..."), "lower")

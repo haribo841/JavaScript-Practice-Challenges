@@ -1,6 +1,7 @@
 ﻿//Given an array of either entirely odd integers or entirely even integers except for a single Outlier Number, create a function to return this number.
 function outlierNumber(arr) {
-    return arr.filter(x => x % 2 === 0).length === 1 ? arr.filter(x => x % 2 === 0)[0] : arr.filter(x => x % 2 !== 0)[0]
+    const majorityIsEven = arr.slice(0, 3).filter(value => value % 2 === 0).length >= 2;
+    return arr.find(value => (value % 2 === 0) !== majorityIsEven);
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(outlierNumber([2, 3, 4]), 3)

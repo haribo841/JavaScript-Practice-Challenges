@@ -16,7 +16,7 @@ const validString = (str) => {
 }
 
 const validArray = (str) => {
-	return /\[\s*1\s*,\s*2\s*\,\s*3\s*\,\s*4\s*\]$/.test(str) ? "array" : false
+	return /\[\s*1\s*,\s*2\s*,\s*3\s*,\s*4\s*\]$/.test(str) ? "array" : false
 }
 
 assertEquals(validString(str), "rest", "You need to use the Rest element.")

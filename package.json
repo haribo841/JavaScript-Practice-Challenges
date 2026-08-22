@@ -4,7 +4,10 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "lint": "eslint .",
+    "test": "node scripts/run-challenges.js",
+    "check": "npm run lint && npm test"
   },
   "keywords": [],
   "author": "",

@@ -1,7 +1,11 @@
 ﻿//Convert cartesian coordinates (x, y) to polar coordinates (R, phi) and return score based on the R value.
 //R > 10 gives 0 points, 10 >= R > 5 gives 1 point, 5 >= R > 1 gives 5 points, R <= 1 gives 10 points.
 function dartsScoring(x, y) {
-    return Math.sqrt(x ** 2 + y ** 2) > 10 ? 0 : Math.sqrt(x ** 2 + y ** 2) > 5 ? 1 : Math.sqrt(x ** 2 + y ** 2) > 1 ? 5 : 10;
+    const radius = Math.hypot(x, y);
+    if (radius > 10) return 0;
+    if (radius > 5) return 1;
+    if (radius > 1) return 5;
+    return 10;
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(dartsScoring(-9, 9), 0)

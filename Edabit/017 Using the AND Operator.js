@@ -10,7 +10,7 @@
 function and(a, b) {
     return a && b;
 }
-const Test = require('../testHelper.js');
+import * as Test from '../testHelper.js';
 Test.assertEquals(and(true, true), true)
 Test.assertEquals(and(true, false), false)
 Test.assertEquals(and(false, true), false)

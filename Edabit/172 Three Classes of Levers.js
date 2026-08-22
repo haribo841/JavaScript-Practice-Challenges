@@ -6,7 +6,10 @@ In a third class lever, the fulcrum is situated in the left with the effort bein
 Given an array that contains the fulcrum "f", the effort "e", and the load "l",
 write a function that determines whether or not the array shows a first class lever, second class lever, or a third class lever.*/
 function determineLever(arr) {
-    return arr.indexOf("f") === 1 ? "first class lever" : arr.indexOf("f") === 2 ? "second class lever" : "third class lever"
+    const fulcrumIndex = arr.indexOf("f");
+    if (fulcrumIndex === 1) return "first class lever";
+    if (fulcrumIndex === 2) return "second class lever";
+    return "third class lever";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(determineLever(["e", "f", "l"]), "first class lever")
