@@ -6,15 +6,21 @@ function equilibrium(x) {
     return true;
 }
 import { assertEquals } from '../testHelper.js';
-assertEquals(equilibrium(0.000), true)
-assertEquals(equilibrium(0), true)
-assertEquals(equilibrium(3), "positive")
-assertEquals(equilibrium(66), "positive")
-assertEquals(equilibrium(5425), "positive")
-assertEquals(equilibrium(1111.1), "positive")
-assertEquals(equilibrium(0.0001), "positive")
-assertEquals(equilibrium(-3), "negative")
-assertEquals(equilibrium(-66), "negative")
-assertEquals(equilibrium(-5425), "negative")
-assertEquals(equilibrium(-1111.1), "negative")
-assertEquals(equilibrium(-0.0001), "negative")
+const equilibriumCases = [
+    [0.000, true],
+    [0, true],
+    [3, "positive"],
+    [66, "positive"],
+    [5425, "positive"],
+    [1111.1, "positive"],
+    [0.0001, "positive"],
+    [-3, "negative"],
+    [-66, "negative"],
+    [-5425, "negative"],
+    [-1111.1, "negative"],
+    [-0.0001, "negative"]
+];
+
+for (const [input, expected] of equilibriumCases) {
+    assertEquals(equilibrium(input), expected)
+}

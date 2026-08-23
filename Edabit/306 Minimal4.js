@@ -5,11 +5,17 @@ function firstOne(a, b = 0, c = 0, d = 0) {
     return a || b || c || d || "not found";
 }
 import { assertEquals } from '../testHelper.js';
-assertEquals(firstOne('Edabit'), 'Edabit')
-assertEquals(firstOne(false), "not found")
-assertEquals(firstOne('', 'Pikachu'), 'Pikachu')
-assertEquals(firstOne('', 0), "not found")
-assertEquals(firstOne(0, 20, ''), 20)
-assertEquals(firstOne(0, 0, ''), "not found")
-assertEquals(firstOne('', 0, true, false), true)
-assertEquals(firstOne('', 0, false, true), true)
+const firstTruthyCases = [
+    [["Edabit"], "Edabit"],
+    [[false], "not found"],
+    [["", "Pikachu"], "Pikachu"],
+    [["", 0], "not found"],
+    [[0, 20, ""], 20],
+    [[0, 0, ""], "not found"],
+    [["", 0, true, false], true],
+    [["", 0, false, true], true]
+];
+
+for (const [args, expected] of firstTruthyCases) {
+    assertEquals(firstOne(...args), expected)
+}
