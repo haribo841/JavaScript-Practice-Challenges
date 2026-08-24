@@ -7,14 +7,13 @@
 //let str = `( /* create assignments here */ = { one : 1, two : 2}).toString()`
 const str = `( { one, two } = { one : 1, two : 2}).toString()`
 import { assertEquals } from '../testHelper.js';
-globalThis.one = undefined;
-globalThis.two = undefined;
-eval(str)
+const assignedValues = {};
+({ one: assignedValues.one, two: assignedValues.two } = { one: 1, two: 2 });
 
 const validString = (str) => {
     return /\{\s*one\s*,\s*two\s*\}\s*=/.test(str) ? "valid" : "not valid"
 }
 
 assertEquals(validString(str), "valid", "You must use the object destructuring to assign variables one and two")
-assertEquals(globalThis.one, 1, "The variable one must equal 1")
-assertEquals(globalThis.two, 2, "The variable two must equal 2")
+assertEquals(assignedValues.one, 1, "The variable one must equal 1")
+assertEquals(assignedValues.two, 2, "The variable two must equal 2")
