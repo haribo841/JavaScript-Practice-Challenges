@@ -5,7 +5,10 @@
     <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">1.0.0</PackageJsonVersion>
     <PackageJsonType Condition="$(PackageJsonType) == ''">module</PackageJsonType>
     <PackageJsonMain Condition="$(PackageJsonMain) == ''">app.js</PackageJsonMain>
-    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">echo "Error: no test specified" &amp;&amp; exit 1</PackageJsonScriptsTest>
+    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">node app.js</PackageJsonScriptsStart>
+    <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">node scripts/run-challenges.js</PackageJsonScriptsTest>
+    <PackageJsonScriptsCheck Condition="$(PackageJsonScriptsCheck) == ''">npm run lint &amp;&amp; npm test</PackageJsonScriptsCheck>
     <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[]</PackageJsonKeywords>
     <PackageJsonAuthor Condition="$(PackageJsonAuthor) == ''"></PackageJsonAuthor>
     <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">ISC</PackageJsonLicense>
