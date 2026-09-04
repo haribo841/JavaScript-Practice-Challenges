@@ -1,7 +1,9 @@
 ﻿//Write a function that returns the boolean true if the given number is zero,
 //the string "positive" if the number is greater than zero or the string "negative" if it's smaller than zero.
 function equilibrium(x) {
-    return x === 0 ? true : x > 0 ? "positive" : "negative";
+    if (x === 0) return true;
+    if (x > 0) return "positive";
+    return "negative";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(equilibrium(0.000), true)

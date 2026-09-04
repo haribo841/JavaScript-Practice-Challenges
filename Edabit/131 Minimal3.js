@@ -4,7 +4,10 @@
 "second" if only b is true .
 "neither" if both a and b are false.*/
 function areTrue(a, b) {
-    return a ? (b ? "both" : "first") : (b ? "second" : "neither");
+    if (a && b) return "both";
+    if (a) return "first";
+    if (b) return "second";
+    return "neither";
 }
 import { assertEquals } from '../testHelper.js';
 assertEquals(areTrue(true, true), "both")

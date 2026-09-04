@@ -1,6 +1,8 @@
 ﻿//The challenge is simple. Return a random integer N such that a <= N <= b.
+import { randomInt as cryptoRandomInt } from 'node:crypto';
+
 function randomInt(a, b) {
-    return Math.floor(Math.random() * (b - a + 1)) + a;
+    return cryptoRandomInt(a, b + 1);
 }
 import { assertEquals } from '../testHelper.js';
 const range = (start, stop, step = 1) =>
