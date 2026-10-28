@@ -9,6 +9,9 @@
     "test": "node scripts/run-challenges.js",
     "check": "npm run lint && npm test"
   },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
