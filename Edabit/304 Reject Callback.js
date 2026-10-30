@@ -1,14 +1,9 @@
-﻿//Reject the promise with the simple string "It's not a dog!".
+﻿//Reject the promise with an Error whose message is "It's not a dog!".
+//The original exercise requests a string; this version preserves the message and adds an error stack.
 import { setTimeout } from "node:timers";
-const promise = new Promise((resolve, reject) => {
-    const animal = "cat";
-
+const promise = new Promise((_resolve, reject) => {
     setTimeout(() => {
-        if (animal === "dog") {
-            resolve("It's a dog!");
-        } else {
-            reject("It's not a dog!");
-        }
+        reject(new Error("It's not a dog!"));
     }, 1000);
 });
 import { assertEquals } from "../testHelper.js";
@@ -22,4 +17,6 @@ const rejection = await promise.then(
     reason => reason
 );
 
-assertEquals(rejection, "It's not a dog!");
+assertEquals(rejection instanceof Error, true);
+assertEquals(rejection.message, "It's not a dog!");
+assertEquals(typeof rejection.stack, "string");

@@ -14,13 +14,18 @@ npm run check
 ```
 
 - `npm run lint` checks every JavaScript file with ESLint.
-- `npm test` executes every challenge with a per-file timeout.
+- `npm test` checks the runner's worker pool, then executes every challenge with a
+  per-file timeout and at most four challenge processes at once. Reporting stays
+  in filename order.
 - `npm run check` runs both checks.
 
 SonarQube Cloud analyzes this public repository automatically after each push to
 `master`. Because direct commits are intentionally allowed, its quality gate is a
 post-push verification; run `npm run check` before pushing.
 
-Findings caused by an exercise's explicit teaching contract are reviewed and
-marked **Accepted** in SonarQube Cloud with a written rationale. Other findings are
-fixed in code. Source-level `NOSONAR` suppressions are not used.
+When an exercise explicitly requires mixed return types, its JSDoc declares that
+union instead of changing the expected outputs. Source-level `NOSONAR`
+suppressions and disabled rules are not used for these fixes. Exercise 304 now
+rejects with an `Error`, retaining the original message and adding a stack trace;
+its source and wiki explicitly describe this modernization of the original
+string-rejection exercise.

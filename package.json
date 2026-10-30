@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "lint": "eslint .",
-    "test": "node scripts/run-challenges.js",
+    "test": "node --test && node scripts/run-challenges.js",
     "check": "npm run lint && npm test"
   },
   "engines": {

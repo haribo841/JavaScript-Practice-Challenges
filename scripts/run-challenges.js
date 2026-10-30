@@ -4,6 +4,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { clearTimeout, setTimeout } from 'node:timers';
 import { fileURLToPath } from 'node:url';
+import { runChallengePool } from '../lib/runChallengePool.js';
 
 const TIMEOUT_MS = 5000;
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -60,11 +61,8 @@ const challengeFiles = entries
   .map(entry => entry.name)
   .sort((left, right) => left.localeCompare(right, 'en'));
 
-const failures = [];
-for (const fileName of challengeFiles) {
-  const result = await runChallenge(fileName);
-  if (result.timedOut || result.error || result.code !== 0) failures.push(result);
-}
+const results = await runChallengePool(challengeFiles, runChallenge);
+const failures = results.filter(result => result.timedOut || result.error || result.code !== 0);
 
 failures.forEach(printFailure);
 console.log(`\n${challengeFiles.length - failures.length}/${challengeFiles.length} challenges passed.`);
