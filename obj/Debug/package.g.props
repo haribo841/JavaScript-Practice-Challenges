@@ -7,12 +7,13 @@
     <PackageJsonMain Condition="$(PackageJsonMain) == ''">app.js</PackageJsonMain>
     <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">node app.js</PackageJsonScriptsStart>
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
-    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">node scripts/run-challenges.js</PackageJsonScriptsTest>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">node --test &amp;&amp; node scripts/run-challenges.js</PackageJsonScriptsTest>
     <PackageJsonScriptsCheck Condition="$(PackageJsonScriptsCheck) == ''">npm run lint &amp;&amp; npm test</PackageJsonScriptsCheck>
+    <PackageJsonEnginesNode Condition="$(PackageJsonEnginesNode) == ''">^20.19.0 || ^22.13.0 || &gt;=24</PackageJsonEnginesNode>
     <PackageJsonKeywords Condition="$(PackageJsonKeywords) == ''">[]</PackageJsonKeywords>
     <PackageJsonAuthor Condition="$(PackageJsonAuthor) == ''"></PackageJsonAuthor>
     <PackageJsonLicense Condition="$(PackageJsonLicense) == ''">ISC</PackageJsonLicense>
     <PackageJsonDescription Condition="$(PackageJsonDescription) == ''"></PackageJsonDescription>
-    <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^9.20.1</PackageJsonDevdependenciesEslint>
+    <PackageJsonDevdependenciesEslint Condition="$(PackageJsonDevdependenciesEslint) == ''">^10.9.1</PackageJsonDevdependenciesEslint>
   </PropertyGroup>
 </Project>
